@@ -2,7 +2,7 @@ default:
     just --list
 
 run *ARGS:
-    nix-shell -vvvvvvv -p pkl --run "pkl {{ARGS}}"
+    NIX_PATH="nixpkgs=$(git rev-parse --show-toplevel):$NIX_PATH" nix-shell -p pkl --run "pkl {{ARGS}}"
 
 hammer *ARGS:
     #!/usr/bin/env bash
