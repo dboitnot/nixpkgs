@@ -1,7 +1,7 @@
-{
-  lib,
-  stdenv,
-  fetchurl,
+{ lib
+, stdenv
+, fetchurl
+,
 }:
 
 let
@@ -13,12 +13,14 @@ let
 in
 stdenv.mkDerivation {
   name = "pkl";
-  dontUnpack = true;
   inherit src;
+  dontUnpack = true;
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/bin $out/lib
     cp ${src} $out/bin/pkl
+    runHook postInstall
   '';
 
   meta = with lib; {
