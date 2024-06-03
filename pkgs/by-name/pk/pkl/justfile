@@ -1,0 +1,12 @@
+run *ARGS:
+    nix-shell -p pkl --run "pkl {{ARGS}}"
+
+hammer:
+    #!/usr/bin/env bash
+    set -euxo pipefail
+    cd $(git rev-parse --show-toplevel)
+    pwd
+    nix run github:jtojnar/nixpkgs-hammering pkl
+
+review *ARGS:
+    nix-shell -p nixpkgs-review --run "nixpkgs-review {{ARGS}}"
