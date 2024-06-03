@@ -4803,6 +4803,12 @@
     githubId = 3179832;
     name = "D. Bohdan";
   };
+  dboitnot = {
+    email = "dboitnot@gmail.com";
+    github = "dboitnot";
+    githubId = 1405622;
+    name = "Dan Boitnott";
+  };
   dbrgn = {
     email = "nix@dbrgn.ch";
     github = "dbrgn";
